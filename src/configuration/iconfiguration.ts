@@ -272,6 +272,11 @@ export interface IConfiguration {
   substitutionTextColor: string;
 
   /**
+   * When vim mode change, execute commands
+   */
+  modeChangeExecuteCommands: string[]; // 当vim模式改变时，执行的命令
+
+  /**
    * Yank highlight settings.
    */
   highlightedyank: IHighlightedYankConfiguration;

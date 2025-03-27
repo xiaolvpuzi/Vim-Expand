@@ -1130,6 +1130,15 @@
           "description": "Custom digraph shortcuts for inserting special characters, expressed as UTF16 code points.",
           "default": {}
         },
+        "vim.modeChangeExecuteCommands": {
+          "type": "array",
+          "default": [],
+          "description": "when vim mode change, execute commands ",
+          "items": {
+            "type": "string",
+            "description": "command"
+          }
+        },
         "vim.wrapscan": {
           "type": "boolean",
           "description": "Searches wrap around the end of the file.",

@@ -337,6 +337,8 @@ class Configuration implements IConfiguration {
   substitutionColor = '#50f01080';
   substitutionTextColor = '';
 
+  modeChangeExecuteCommands: string[] = [];
+
   highlightedyank: IHighlightedYankConfiguration = {
     enable: false,
     color: 'rgba(250, 240, 170, 0.5)',

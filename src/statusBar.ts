@@ -75,6 +75,18 @@ class StatusBarImpl implements vscode.Disposable {
     if (shouldUpdateColor) {
       this.updateColor(vimState.currentMode);
     }
+    if (vimState.currentMode !== this.previousMode) {
+      const commands = configuration.modeChangeExecuteCommands;
+      // Execute configured commands with current mode
+      for (const command of commands) {
+        try {
+          console.log('execute command' + command);
+          vscode.commands.executeCommand(command, vimState.currentMode.toString());
+        } catch (error) {
+          Logger.error(`Failed to execute mode change command: ${command} - ${error}`);
+        }
+      }
+    }
 
     this.previousMode = vimState.currentMode;
     this.showingDefaultMessage = false;
